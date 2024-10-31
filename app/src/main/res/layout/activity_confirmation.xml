@@ -9,54 +9,68 @@
     android:padding="16dp"
     tools:context=".ConfirmationActivity">
 
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="148dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/rb_2151257288" />
+
     <!-- Judul Halaman -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order Food"
+        android:text="Konfirmasi Order"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Confirmation Nama Makanan -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Confirmation Makanan dan Jumlah Porsi -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Food Name: Batagor"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
 
-    <!-- Confirmation Jumlah Porsi -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number of Servings: 2 pax"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/foodNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/servingsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"/>
+    </LinearLayout>
 
     <!-- Confirmation Nama pengorder -->
     <TextView
+        android:id="@+id/orderNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ordering Name: Usep"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
 
     <!-- Input Catatan Tambahan -->
     <TextView
+        android:id="@+id/notesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Additional Notes: Tidak Pedas"
         android:textSize="18sp"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Input Catatan Tambahan -->
+    <!-- Input Catatan Terima Kasih -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thanks for your order and please wait for delivering by nearest courier"
+        android:text="Terima Kasih Untuk Pemesanan Anda!, Silahkan tunggu pesanan anda."
         android:textStyle="bold"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"/>
@@ -65,6 +79,6 @@
         android:id="@+id/backtoMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_500"
         android:text="Back to Menu" />
-
 </LinearLayout>

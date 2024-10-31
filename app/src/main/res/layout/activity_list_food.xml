@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,28 +5,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="15dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:layout_marginBottom="25dp"
+    android:gravity="end|bottom"
+    android:layout_marginTop="0dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_marginBottom="0dp"
     tools:context=".ListFoodActivity">
 
-    <!-- Judul Halaman -->
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
+    <!-- Header menggunakan ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/food_list_title"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="16dp"/>
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <!-- TextView untuk Username -->
+        <TextView
+            android:id="@+id/usernameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_orange_light"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnLogout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Tombol Logout -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log Out"
+            android:visibility="gone"
+            android:backgroundTint="@android:color/holo_orange_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <!-- Title MENU -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MENU"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- RecyclerView untuk Daftar Makanan -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
         android:scrollbars="vertical"/>
+
+    <!-- Tombol Checkout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="16dp"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checkout"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:layout_gravity="end" />
+    </LinearLayout>
 
 </LinearLayout>
